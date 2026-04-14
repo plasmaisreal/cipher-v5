@@ -225,7 +225,7 @@
   </div>
 </div>
 <div class="scanbar">
-  <div class="scan-lbl">SCANNING 20 COINS:</div>
+  <div class="scan-lbl">SCANNING:</div>
   <div class="coin-chips" id="coinChips"></div>
 </div>
 <div class="isec">
@@ -240,12 +240,7 @@
     <button class="pb" onclick="setAmt(5000,this)">$5K</button>
     <button class="pb" onclick="setAmt(10000,this)">$10K</button>
   </div>
-  <div style="display:flex;align-items:center;gap:6px;font-size:12px;color:var(--t2);">
-    MAX:
-    <select class="trade-count-sel" id="maxTradesSelect" onchange="cfg.maxTrades=parseInt(this.value)">
-      <option value="5">5</option><option value="8">8</option><option value="10" selected>10</option><option value="12">12</option><option value="15">15</option>
-    </select>
-  </div>
+  <div style="display:flex;align-items:center;gap:6px;font-size:12px;color:var(--t2);">MAX: <select class="trade-count-sel" id="maxTradesSelect" onchange="cfg.maxTrades=parseInt(this.value)"><option value="5">5</option><option value="8">8</option><option value="10" selected>10</option><option value="12">12</option><option value="15">15</option></select></div>
 </div>
 <div class="ctrl">
   <div class="cleft">
@@ -277,44 +272,27 @@
 <button class="stgl" onclick="toggleSett()">◈ SETTINGS — <span id="stxt">EXPAND</span> | SL:<span id="slD"> -8%</span></button>
 <div class="sbar hid" id="sbar">
   <div class="sg"><div class="sgl2">STOP LOSS</div><div class="sgv" id="slV" style="color:var(--r)">-8%</div><input type="range" min="2" max="25" step="1" value="8" oninput="setSl(this.value)"></div>
-  <div class="sg"><div class="sgl2">MIN CIPHER SCORE</div><div class="sgv" id="minScoreV">55 / 100</div><input type="range" min="40" max="80" step="5" value="55" oninput="setMinScore(this.value)"></div>
+  <div class="sg"><div class="sgl2">MIN CIPHER SCORE</div><div class="sgv" id="minScoreV">55/100</div><input type="range" min="40" max="80" step="5" value="55" oninput="setMinScore(this.value)"></div>
   <div class="sg"><div class="sgl2">SIM DURATION</div><div class="sgv" id="durV">10 min</div><input type="range" min="5" max="20" step="5" value="10" oninput="setDur(this.value)"></div>
 </div>
-
 <!-- LIVE DATA VERIFICATION BAR -->
 <div class="databar">
-  <div class="db-item">
-    <div class="db-lbl">DATA SOURCE</div>
-    <div class="db-val" id="dataMode" style="color:var(--y)">LOADING</div>
-  </div>
-  <div class="db-item">
-    <div class="db-lbl">BTC LIVE</div>
-    <div class="db-val" id="btcPxLbl" style="color:var(--c)">$--</div>
-  </div>
-  <div class="db-item">
-    <div class="db-lbl">LAST TICK</div>
-    <div class="db-val" id="lastTick" style="color:var(--g)">--:--:--</div>
-  </div>
-  <div class="db-item">
-    <div class="db-lbl">TICK COUNT</div>
-    <div class="db-val" id="tickCount" style="color:var(--y)">0</div>
-  </div>
-  <div class="db-item">
-    <div class="db-lbl">COINS LIVE</div>
-    <div class="db-val" id="liveCount" style="color:var(--g)">0/20</div>
-  </div>
+  <div class="db-item"><div class="db-lbl">DATA SOURCE</div><div class="db-val" id="dataMode" style="color:var(--y)">LOADING</div></div>
+  <div class="db-item"><div class="db-lbl">BTC PRICE</div><div class="db-val" id="btcPxLbl" style="color:var(--c)">$--</div></div>
+  <div class="db-item"><div class="db-lbl">LAST UPDATE</div><div class="db-val" id="lastTick" style="color:var(--g)">--:--:--</div></div>
+  <div class="db-item"><div class="db-lbl">UPDATES</div><div class="db-val" id="tickCount" style="color:var(--y)">0</div></div>
+  <div class="db-item"><div class="db-lbl">COINS LIVE</div><div class="db-val" id="liveCount" style="color:var(--g)">0/20</div></div>
 </div>
-
 <div class="cards" id="cards">
-  <div class="emp" id="emp">
+  <div class="emp">
     <div class="ei">⚡</div>
-    <div class="et">REAL BINANCE DATA<br>LOADING LIVE PRICES<br><br>WATCH LAST TICK UPDATE<br>TO VERIFY LIVE DATA<br><br>SET AMOUNT + PRESS START</div>
+    <div class="et">WATCH "LAST UPDATE"<br>IT TICKS = REAL DATA<br><br>PRICES FROM BINANCE<br>EVERY 3 SECONDS<br><br>SET AMOUNT + START</div>
   </div>
 </div>
 <div class="logw"><div class="logh">◈ LIVE SIGNAL FEED</div><div id="logEl"></div></div>
 <div class="btm">
-  <span>CIPHER v5: <b>REAL BINANCE WS + COINGECKO + MTF-RSI + CVD + OB + FUNDING</b></span>
-  <span>SL: <b id="btmSL">-8%</b> &nbsp; PER TRADE: <b id="btmCap">$100</b> &nbsp; SILENT CRANE <b>⚡</b></span>
+  <span>CIPHER v5: <b>BINANCE WS → REAL REST FALLBACK → NO FAKE SIMULATION</b></span>
+  <span>SL: <b id="btmSL">-8%</b> &nbsp; PER TRADE: <b id="btmCap">$100</b> &nbsp; ⚡</span>
 </div>
 
   <script src="script.js"></script>
